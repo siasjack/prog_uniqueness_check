@@ -70,6 +70,8 @@ int tools_read_file(char *file_name,char **dest_str)
 	if(!(*dest_str) ){
 		exit(-1);	
 	}
+	memset(*dest_str,0,len+1);
+	
 	fread(*dest_str,1,len,f);
 	fclose(f);
 	return len;
